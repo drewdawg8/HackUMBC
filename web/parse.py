@@ -7,7 +7,7 @@ import os
 
 pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files (x86)/Tesseract-OCR/tesseract'
 
-def parse(img):
+def parse_text(img):
 
 	# construct the argument parse and parse the arguments
 	# ap = argparse.ArgumentParser()
@@ -31,7 +31,7 @@ def parse(img):
 	# make a check to see if median blurring should be done to remove
 	# noise
 	# elif args["preprocess"] == "blur":
-	#	gray = cv2.medianBlur(gray, 3)
+	gray = cv2.medianBlur(gray, 3)
 
 	# write the grayscale image to disk as a temporary file so we can
 	# apply OCR to it
@@ -46,8 +46,9 @@ def parse(img):
 	textfile = open("text.txt", "w+")
 	textfile.write(text)
 	textfile.close()
+	return text
 
-#parse("image.jpg")
+#parse_text("image.jpg")
 
 # show the output images
 # cv2.imshow("Image", image)
