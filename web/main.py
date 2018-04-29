@@ -2,7 +2,7 @@ from flask import Flask, flash, redirect, render_template, request, session, abo
 from werkzeug.utils import secure_filename
 import os
 from parse import parse_text
-filename = "hello"
+
 
 app = Flask(__name__)
 UPLOAD_FOLDER = './'
@@ -12,14 +12,18 @@ def success(name):
     if request.method == 'POST':
         action = request.form['action']
         if action == 'yes':
+            parse_text(name)
             return redirect(url_for('text',filename = name))
-        else: #action == 'no':
+        else:
             return redirect('/')
     return render_template("success.html")
 
 @app.route("/text/<filename>")
 def text(filename):
-    return parse_text(filename)
+
+    file = open('text.txt','r')
+    lines = file.read()
+    return str(lines)
 
 
 @app.route("/", methods = ['POST','GET'])
