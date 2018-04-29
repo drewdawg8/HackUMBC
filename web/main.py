@@ -2,7 +2,7 @@ from flask import Flask, flash, redirect, render_template, request, session, abo
 from werkzeug.utils import secure_filename
 import os
 from parse import parse_text
-filename = "hello"
+
 
 app = Flask(__name__)
 UPLOAD_FOLDER = './'
