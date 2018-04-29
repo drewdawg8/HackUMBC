@@ -12,6 +12,7 @@ def success(name):
     if request.method == 'POST':
         action = request.form['action']
         if action == 'yes':
+            parse_text(name)
             return redirect(url_for('text',filename = name))
         else: #action == 'no':
             return redirect('/')
@@ -19,7 +20,10 @@ def success(name):
 
 @app.route("/text/<filename>")
 def text(filename):
-    return parse_text(filename)
+
+    file = open('text.txt','r')
+    lines = file.read()
+    return str(lines)
 
 
 @app.route("/", methods = ['POST','GET'])

@@ -4,6 +4,8 @@ import pytesseract
 import argparse
 import cv2
 import os
+import codecs
+#f = codecs.open(filename, 'w', encoding='utf8')
 
 def parse_text(file_name):
 	pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files (x86)/Tesseract-OCR/tesseract'
@@ -28,9 +30,9 @@ def parse_text(file_name):
 	text = pytesseract.image_to_string(Image.open(filename))
 #	os.remove(filename)
 	# print(text)
-#	textfile = open("text.txt", "w+")
-#	textfile.write(text)
-#	textfile.close()
+	textfile = codecs.open("text.txt", "w+",encoding="utf8")
+	textfile.write(text)
+	textfile.close()
 	return text
 
 	# show the output images
