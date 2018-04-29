@@ -1,5 +1,7 @@
 # Audio Booker
 
-## Libraries used:
-* PyTeesseract to parse images
-* Flask to add the functionality to a webpage
+## Tools used:
+* PyTesseract library to parse images
+* Flask library to add the functionality to a webpage
+* AWS to host
+* HTML and CSS for styling
