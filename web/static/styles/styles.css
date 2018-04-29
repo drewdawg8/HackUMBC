@@ -38,7 +38,7 @@
   color: #ffffff;
 }
 .bg1{
-  background-image: url("logo.svg"),url(bg.jpg);
+  background-image: url("logo.svg"),url(bg2.jpg);
   background-repeat: no-repeat,no-repeat;
   background-position: bottom right,100%,100%;
   height: 585px;

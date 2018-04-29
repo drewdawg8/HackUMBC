@@ -26,11 +26,11 @@ def parse_text(file_name):
 	# load the image as a PIL/Pillow image, apply OCR, and then delete
 	# the temporary file
 	text = pytesseract.image_to_string(Image.open(filename))
-	os.remove(filename)
+#	os.remove(filename)
 	# print(text)
-	textfile = open("text.txt", "w+")
-	textfile.write(text)
-	textfile.close()
+#	textfile = open("text.txt", "w+")
+#	textfile.write(text)
+#	textfile.close()
 	return text
 
 	# show the output images
