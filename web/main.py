@@ -13,6 +13,7 @@ def success(name):
         action = request.form['action']
         if action == 'yes':
             parse_text(name)
+	    os.remove(name)
             return redirect(url_for('text',filename = name))
         else:
             return redirect('/')
@@ -39,4 +40,4 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0",port=80)
