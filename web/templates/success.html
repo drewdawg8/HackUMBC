@@ -1,10 +1,14 @@
 <html>
-<p>Sucess!</p>
-<p>View text?</p>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+<body class="bg1">
+<h1 class= "col2">Sucess!</h>
+<p class="col1">View text?</p>
 <form method = "post">
-  <p> <button type= "submit" name = "action" value = "yes">Yes!</button>
-      <button type = "submit" name = "action" value = "no">No</button>
+  <p>
+      <button class = "btn btn:hover" type= "submit" name = "action" value = "yes">Yes!</button>
+      <button class = "btn btn:hover" type = "submit" name = "action" value = "no">No</button>
   </p>
 
 </form>
+</body>
 </html>
