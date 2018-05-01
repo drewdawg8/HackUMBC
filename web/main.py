@@ -9,18 +9,18 @@ UPLOAD_FOLDER = './'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @app.route("/success/<name>", methods = ['POST','GET'])
 def success(name):
-    text = str(parse_text(name))
+    text = parse_text(name)
     os.remove(name)
     return render_template("success.html",value = text)
 
-@app.route("/text/<filename>")
+'''@app.route("/text/<filename>")
 def text(filename):
 
     file = open('text.txt','r')
     lines = file.read()
     return str(lines)
 
-
+'''
 @app.route("/", methods = ['POST','GET'])
 def index():
     if request.method == 'POST':
@@ -34,4 +34,4 @@ def index():
 
 
 if __name__ == "__main__":
-	app.run()
+	app.run(host="172.31.84.131",port=80)
