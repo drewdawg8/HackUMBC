@@ -7,7 +7,7 @@ html,
 body {
   height: 100%;
   font-family: 'Abel';
-  color: #333333;
+  color: white;
 }
 .btn{
   font-family: 'Abel';
@@ -45,6 +45,11 @@ input[type=file]:focus {
     font-size: 24;
     border-color:#333;
 }
+
+.p_text{
+  display:block;
+  margin-left: 50px;
+}
 input[type=submit] {
   font-family: 'Abel';
   background-color: #333333;
@@ -71,9 +76,13 @@ header{
  border-bottom-style: solid;
  font-family: 'Abel';
  color: white;
- background-color: #333333;
+ background-image: url(images/background.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
+
 }
 .container > * {
+
     display: inline-block;
 }
 .p_head{
@@ -83,9 +92,12 @@ header{
   left: 1500px;
 }
 #main {
+  background-image: url(images/book.jpg);
+  background-size: cover;
   overflow: auto;
   padding-bottom: 750px;
   border-bottom-style: solid;
+
   /* must be same height as the footer */
 }
 

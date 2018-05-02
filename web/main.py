@@ -1,7 +1,8 @@
 from flask import Flask, flash, redirect, render_template, request, session, abort, url_for
 from werkzeug.utils import secure_filename
 import os
-from parse import parse_text
+from functions import *
+from gtts import gTTS
 
 
 app = Flask(__name__)
@@ -11,7 +12,14 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def success(name):
     text = parse_text(name)
     os.remove(name)
+    tts = gTTS(text=text, lang='en')
+    tts.save("text.mp3")
     return render_template("success.html",value = text)
+
+@app.route('/read')
+def read():
+    read_text()
+    return '', 204  # no content
 
 '''@app.route("/text/<filename>")
 def text(filename):
@@ -34,4 +42,4 @@ def index():
 
 
 if __name__ == "__main__":
-	app.run(host="172.31.84.131",port=80)
+    app.run()
